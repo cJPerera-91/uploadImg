@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Upload API
+  version: 1.0.0
+paths:
+  /upload/:
+    post:
+      summary: Upload data
+      operationId: uploadData
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                device_id:
+                  type: string
+                  format: form
+                temperature:
+                  type: number
+                  format: float
+                  example: 36.6
+                file_name:
+                  type: string
+                  format: form
+                image:
+                  type: string
+                  format: binary
+              required:
+                - device_id
+                - temperature
+                - file_name
+                - image
+      responses:
+        '200':
+          description: Data uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Data uploaded successfully
+servers:
+  - url: http://localhost:5000
+    description: Local server
