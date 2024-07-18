@@ -1,6 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Form
 from pydantic import BaseModel
-import pandas as pd
+#import pandas as pd
 import os
 
 app = FastAPI()
@@ -43,4 +43,4 @@ async def upload_data(
     
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=5000)
+    uvicorn.run(app, port=5000)
