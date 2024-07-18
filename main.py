@@ -19,10 +19,11 @@ async def upload_data(
 ):
     # Create a directory for the device ID if it doesn't exist
     device_dir = f"./{device_id}"
-    os.makedirs(device_dir, exist_ok=True)
+    '''
+    #os.makedirs(device_dir, exist_ok=True)
     
     # Path to the CSV file
-    csv_file_path = os.path.join(device_dir, "temp.csv")
+    #csv_file_path = os.path.join(device_dir, "temp.csv")
     
     # Append temperature data to the CSV file
     new_data = pd.DataFrame([{"temperature": temperature}])
@@ -37,9 +38,9 @@ async def upload_data(
     image_path = os.path.join(device_dir, file_name)
     with open(image_path, "wb") as f:
         f.write(await image.read())
-    
+    '''
     return {"message": "Data uploaded successfully"}
-
+    
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=5000)
