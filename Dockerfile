@@ -17,4 +17,4 @@ EXPOSE 5000
 ENV PYTHONUNBUFFERED=1
 
 # Run uvicorn server
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
