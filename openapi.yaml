@@ -43,5 +43,5 @@ paths:
                     type: string
                     example: Data uploaded successfully
 servers:
-  - url: http://localhost:5000
+  - url: http://localhost:8000
     description: Local server
